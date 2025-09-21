@@ -68,124 +68,124 @@ NAV_MENU_LEFT = [
     },
     {
         "name": "C",
-        "url": "/c",
+        "url": "/dansk/danskc",
     },
     {
         "name": "D",
-        "url": "/d",
+        "url": "/dansk/danskd",
     },
     {
         "name": "E",
-        "url": "/e",
+        "url": "/dansk/danske",
     },
     {
         "name": "F",
-        "url": "/f",
+        "url": "/dansk/danskf",
     },
     {
         "name": "G",
-        "url": "/g",
+        "url": "/dansk/danskg",
     },
     {
         "name": "H",
-        "url": "/h",
+        "url": "/dansk/danskh",
     },
     {
         "name": "I",
-        "url": "/i",
+        "url": "/dansk/danski",
     },
     {
         "name": "J",
-        "url": "/j",
+        "url": "/dansk/danskj",
     },
     {
         "name": "K",
-        "url": "/k",
+        "url": "/dansk/danskk",
     },
     {
         "name": "L",
-        "url": "/l",
+        "url": "/dansk/danskl",
     },
     {
         "name": "M",
-        "url": "/m",
+        "url": "/dansk/danskm",
     },
     {
         "name": "N",
-        "url": "/n",
+        "url": "/dansk/danskn",
     },
     {
         "name": "O",
-        "url": "/o",
+        "url": "/dansk/dansko",
     },
     {
         "name": "P",
-        "url": "/p",
+        "url": "/dansk/danskp",
     },
     {
         "name": "Q",
-        "url": "/q",
+        "url": "/dansk/danskq",
     },
     {
         "name": "R",
-        "url": "/r",
+        "url": "/dansk/danskr",
     },
     {
         "name": "S",
-        "url": "/s",
+        "url": "/dansk/dansks",
     },
     {
         "name": "T",
-        "url": "/t",
+        "url": "/dansk/danskt",
     },
     {
         "name": "U",
-        "url": "/u",
+        "url": "/dansk/dansku",
     },
     {
         "name": "V",
-        "url": "/v",
+        "url": "/dansk/danskv",
     },
     {
         "name": "W",
-        "url": "/w",
+        "url": "/dansk/danskw",
     },
     {
         "name": "X",
-        "url": "/x",
+        "url": "/dansk/danskx",
     },
     {
         "name": "Y",
-        "url": "/y",
+        "url": "/dansk/dansky",
     },
     {
         "name": "Z",
-        "url": "/z",
+        "url": "/dansk/danskz",
     },
     {
         "name": "Æ",
-        "url": "/æ",
+        "url": "/dansk/danskæ",
     },
     {
         "name": "Ø",
-        "url": "/ø",
+        "url": "/dansk/danskø",
     },
     {
         "name": "Å",
-        "url": "/å",
+        "url": "/dansk/danskå",
     },
-    {
-        "name": "Stav til ordet",
-        "url": "/gaet",
-    },
-    {
-        "name": "Find det rette ord",
-        "url": "#",
-    },
-    {
-        "name": "Hvad mangler",
-        "url": "#",
-    },
+    #{
+    #    "name": "Stav til ordet",
+     #   "url": "/gaet",
+    #},
+    #{
+    #    "name": "Find det rette ord",
+    #    "url": "#",
+    #},
+    #{
+    #    "name": "Hvad mangler",
+    #    "url": "#",
+    #},
     {
         "name": "Tilføj",
         "url": "/tilføj",
@@ -232,7 +232,7 @@ NAV_MENU_RIGHT = [
 
 FOOTER_MENU_LEFT = [
     {
-        "name": "Facebook",
+        "name": "Leg",
         "url": "facebook.com/foobar",
     },
     {
