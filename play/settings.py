@@ -54,10 +54,10 @@ NAV_MENU_LEFT = [
         "name": "Home",
         "url": "/",
     },
-    {
-        "name": "Info",
-        "url": "/Info",
-    },
+    #{
+        #"name": "Info",
+       # "url": "/Info",
+    #},
     {
         "name": "A",
         "url": "/dansk/danska",
@@ -188,7 +188,7 @@ NAV_MENU_LEFT = [
     #},
     {
         "name": "Tilføj",
-        "url": "/tilføj",
+        "url": "/dansk/tilføj",
     },
 ]
 NAV_MENU_RIGHT = [

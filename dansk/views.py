@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import Alfabet, Bogstav#, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, Æ, Ø, Å, Alfabet, Ekstra
-#from .forms import GætForm, EkstraForm
+from .forms import GætForm, EkstraForm
 import random
 
 class Base(View):
@@ -302,3 +302,76 @@ class ÅView(View):
             'å': å
         }
         return render(request, 'dansk/danskå.html', context)
+    
+class Tilføj(View):
+    def get(self, request, *args, **kwargs):
+        alfabet = Alfabet.objects.all()
+        bogstav = Bogstav.objects.all()
+        a = Alfabet.objects.filter(bogstav__bogstav__contains='A')
+        b = Alfabet.objects.filter(bogstav__bogstav__contains='B')
+        c = Alfabet.objects.filter(bogstav__bogstav__contains='C')
+        d = Alfabet.objects.filter(bogstav__bogstav__contains='D')
+        e = Alfabet.objects.filter(bogstav__bogstav__contains='E')
+        f = Alfabet.objects.filter(bogstav__bogstav__contains='F')
+        g = Alfabet.objects.filter(bogstav__bogstav__contains='G')
+        h = Alfabet.objects.filter(bogstav__bogstav__contains='H')
+        i = Alfabet.objects.filter(bogstav__bogstav__contains='I')
+        j = Alfabet.objects.filter(bogstav__bogstav__contains='J')
+        k = Alfabet.objects.filter(bogstav__bogstav__contains='K')
+        l = Alfabet.objects.filter(bogstav__bogstav__contains='L')
+        m = Alfabet.objects.filter(bogstav__bogstav__contains='M')
+        n = Alfabet.objects.filter(bogstav__bogstav__contains='N')
+        o = Alfabet.objects.filter(bogstav__bogstav__contains='O')
+        p = Alfabet.objects.filter(bogstav__bogstav__contains='P')
+        q = Alfabet.objects.filter(bogstav__bogstav__contains='Q')
+        r = Alfabet.objects.filter(bogstav__bogstav__contains='R')
+        s = Alfabet.objects.filter(bogstav__bogstav__contains='S')
+        t = Alfabet.objects.filter(bogstav__bogstav__contains='T')
+        u = Alfabet.objects.filter(bogstav__bogstav__contains='U')
+        v = Alfabet.objects.filter(bogstav__bogstav__contains='V')
+        w = Alfabet.objects.filter(bogstav__bogstav__contains='W')
+        x = Alfabet.objects.filter(bogstav__bogstav__contains='X')
+        y = Alfabet.objects.filter(bogstav__bogstav__contains='Y')
+        z = Alfabet.objects.filter(bogstav__bogstav__contains='Z')
+        æ = Alfabet.objects.filter(bogstav__bogstav__contains='Æ')
+        ø = Alfabet.objects.filter(bogstav__bogstav__contains='Ø')
+        å = Alfabet.objects.filter(bogstav__bogstav__contains='Å')
+        form = EkstraForm()
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        context = {
+            'alfabet': alfabet,
+            'bogstav': bogstav,
+            'form':form,
+            'a': a,
+            'b': b,
+            'c': c,
+            'd': d,
+            'e': e,
+            'f': f,
+            'g': g,
+            'h': h,
+            'i': i,
+            'j': j,
+            'k': k,
+            'l': l,
+            'm': m,
+            'n': n,
+            'o': o,
+            'p': p,
+            'q': q,
+            'r': r,
+            's': s,
+            't': t,
+            'u': u,
+            'v': v,
+            'w': w,
+            'x': x,
+            'y': y,
+            'z': z,
+            'æ': æ,
+            'ø': ø,
+            'å': å,
+        }
+        return render(request, 'dansk/tilføj.html', context)
