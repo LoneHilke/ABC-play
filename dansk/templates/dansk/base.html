@@ -2,7 +2,7 @@
 {% extends 'forside/base.html' %}
 {% load menu_generator %}
 {% block content %}
- <!-- NAV BAR Start -->
+ <!-- NAV BAR Start --><h3>
         {% get_menu "NAV_MENU_LEFT" as left_menu %}
         <div style="float:left;">
             {% for item in left_menu %}
@@ -19,7 +19,7 @@
                     </ul>
                 {% endif %}
             {% endfor %}
-        </div>
+        </div></h3>
 
       
 

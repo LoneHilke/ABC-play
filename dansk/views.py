@@ -339,7 +339,7 @@ class Tilføj(View):
         form = EkstraForm()
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('/dansk/tilføj')
         context = {
             'alfabet': alfabet,
             'bogstav': bogstav,
@@ -373,5 +373,6 @@ class Tilføj(View):
             'æ': æ,
             'ø': ø,
             'å': å,
+           
         }
         return render(request, 'dansk/tilføj.html', context)
