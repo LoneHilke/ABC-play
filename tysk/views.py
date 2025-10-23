@@ -82,4 +82,60 @@ class TyskbView(View):
             'b': b
         }
         return render(request, 'tysk/tyskb.html', context)
+    
+class TyskCView(View):
+    def get(self, request, *args, **kwargs):
+        c = Alfabeth.objects.filter(bugstab__bugstab__contains='C')
+        context = {
+            'c': c
+        }
+        return render(request, 'tysk/tyskc.html', context)
+    
+class TyskDView(View):
+    def get(self, request, *args, **kwargs):
+        d = Alfabeth.objects.filter(bugstab__bugstab__contains='D')
+        context = {
+            'd': d
+        }
+        return render(request, 'tysk/tyskd.html', context)
+    
+class TyskEView(View):
+    def get(self, request, *args, **kwargs):
+        e = Alfabeth.objects.filter(bugstab__bugstab__contains='e')
+        context = {
+            'e': e
+        }
+        return render(request, 'tysk/tyske.html', context)
+    
+class TyskFView(View):
+    def get(self, request, *args, **kwargs):
+        f = Alfabeth.objects.filter(bugstab__bugstab__contains='F')
+        context = {
+            'f': f
+        }
+        return render(request, 'tysk/tyskf.html', context)
+    
+class TyskGView(View):
+    def get(self, request, *args, **kwargs):
+        g = Alfabeth.objects.filter(bugstab__bugstab__contains='G')
+        context = {
+            'g': g
+        }
+        return render(request, 'tysk/tyskg.html', context)
+    
+class TyskHView(View):
+    def get(self, request, *args, **kwargs):
+        h = Alfabeth.objects.filter(bugstab__bugstab__contains='H')
+        context = {
+            'h': h
+        }
+        return render(request, 'tysk/tyskh.html', context)
+    
+class TyskIView(View):
+    def get(self, request, *args, **kwargs):
+        i = Alfabeth.objects.filter(bugstab__bugstab__contains='I')
+        context = {
+            'i': i
+        }
+        return render(request, 'tysk/tyski.html', context)
 
