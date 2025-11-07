@@ -124,7 +124,7 @@ class EngelskHView(View):
     def get(self, request, *args, **kwargs):
         engh = Words.objects.filter(letter__letter__contains = 'engh')
         context = {
-            'engb': engh
+            'engh': engh
         }
         return render(request, 'engelsk/engelskh.html', context)
     
@@ -167,5 +167,45 @@ class EngelskMView(View):
             'engm': engm
         }
         return render(request, 'engelsk/engelskm.html', context)
+    
+class EngelskNView(View):
+    def get(self, request, *args, **kwargs):
+        engn = Words.objects.filter(letter__letter__contains = 'engn')
+        context = {
+            'engn': engn
+        }
+        return render(request, 'engelsk/engelskn.html', context)
+    
+class EngelskOView(View):
+    def get(self, request, *args, **kwargs):
+        engo = Words.objects.filter(letter__letter__contains = 'engo')
+        context = {
+            'engo': engo
+        }
+        return render(request, 'engelsk/engelsko.html', context)
+    
+class EngelskPView(View):
+    def get(self, request, *args, **kwargs):
+        engp = Words.objects.filter(letter__letter__contains = 'engp')
+        context = {
+            'engp': engp
+        }
+        return render(request, 'engelsk/engelskp.html', context)
+    
+class EngelskQView(View):
+    def get(self, request, *args, **kwargs):
+        engq = Words.objects.filter(letter__letter__contains = 'engq')
+        context = {
+            'engq': engq
+        }
+        return render(request, 'engelsk/engelskq.html', context)
+    
+class EngelskRView(View):
+    def get(self, request, *args, **kwargs):
+        engr = Words.objects.filter(letter__letter__contains = 'engr')
+        context = {
+            'engr': engr
+        }
+        return render(request, 'engelsk/engelskr.html', context)
 
 

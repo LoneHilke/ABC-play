@@ -82,7 +82,14 @@ class AView(View):
 class BView(View):
     def get(self, request, *args, **kwargs):
         b = Alfabet.objects.filter(bogstav__bogstav__contains='B')
+
+        form = EkstraForm()
+        if form.is_valid():
+            form.save()
+            return redirect('/dansk/tilføj')
+       
         context = {
+            'form':form,
             'b': b
         }
         return render(request, 'dansk/danskb.html', context)
@@ -307,8 +314,9 @@ class Tilføj(View):
     def get(self, request, *args, **kwargs):
         alfabet = Alfabet.objects.all()
         bogstav = Bogstav.objects.all()
-        a = Alfabet.objects.filter(bogstav__bogstav__contains='A')
-        b = Alfabet.objects.filter(bogstav__bogstav__contains='B')
+        b = Alfabet.objects.filter(bogstav__bogstav__contains='Alfabet')
+        """a = Alfabet.objects.filter(bogstav__bogstav__contains='A')
+        
         c = Alfabet.objects.filter(bogstav__bogstav__contains='C')
         d = Alfabet.objects.filter(bogstav__bogstav__contains='D')
         e = Alfabet.objects.filter(bogstav__bogstav__contains='E')
@@ -335,7 +343,7 @@ class Tilføj(View):
         z = Alfabet.objects.filter(bogstav__bogstav__contains='Z')
         æ = Alfabet.objects.filter(bogstav__bogstav__contains='Æ')
         ø = Alfabet.objects.filter(bogstav__bogstav__contains='Ø')
-        å = Alfabet.objects.filter(bogstav__bogstav__contains='Å')
+        å = Alfabet.objects.filter(bogstav__bogstav__contains='Å')"""
         form = EkstraForm()
         if form.is_valid():
             form.save()
@@ -344,35 +352,6 @@ class Tilføj(View):
             'alfabet': alfabet,
             'bogstav': bogstav,
             'form':form,
-            'a': a,
-            'b': b,
-            'c': c,
-            'd': d,
-            'e': e,
-            'f': f,
-            'g': g,
-            'h': h,
-            'i': i,
-            'j': j,
-            'k': k,
-            'l': l,
-            'm': m,
-            'n': n,
-            'o': o,
-            'p': p,
-            'q': q,
-            'r': r,
-            's': s,
-            't': t,
-            'u': u,
-            'v': v,
-            'w': w,
-            'x': x,
-            'y': y,
-            'z': z,
-            'æ': æ,
-            'ø': ø,
-            'å': å,
-           
+            'b':b,
         }
         return render(request, 'dansk/tilføj.html', context)
