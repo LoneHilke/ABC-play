@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import Base, EngelskAView, EngelskBView, EngelskCView, EngelskDView, EngelskEView, EngelskFView, EngelskGView, EngelskHView, EngelskIView, EngelskJView, EngelskKView, EngelskLView, EngelskMView, EngelskNView, EngelskOView, EngelskPView, EngelskQView, EngelskRView#, EngelskSView, EngelskTView, EngelskUView, EngelskVView, EngelskWView, EngelskXView, EngelskYView, EngelskZView, GætView, Info, Tilføj
+from .views import Base, EngelskAView, EngelskBView, EngelskCView, EngelskDView, EngelskEView, EngelskFView, EngelskGView, EngelskHView, EngelskIView, EngelskJView, EngelskKView, EngelskLView, EngelskMView, EngelskNView, EngelskOView, EngelskPView, EngelskQView, EngelskRView, EngelskSView, EngelskTView, EngelskUView, EngelskVView, EngelskWView, EngelskXView, EngelskYView, EngelskZView#, GætView, Info, Tilføj
 
 urlpatterns = [
     path('', Base.as_view(), name='base'),
@@ -22,5 +22,13 @@ urlpatterns = [
     path('engelskp/', EngelskPView.as_view(), name='engelskp'),
     path('engelskq/', EngelskQView.as_view(), name='engelskq'),
     path('engelskr/', EngelskRView.as_view(), name='engelskr'),
+    path('engelsks/', EngelskSView.as_view(), name='engelsks'),
+    path('engelskt/', EngelskTView.as_view(), name='engelskt'),
+    path('engelsku/', EngelskUView.as_view(), name='engelsku'),
+    path('engelskv/', EngelskVView.as_view(), name='engelskv'),
+    path('engelskw/', EngelskWView.as_view(), name='engelskw'),
+    path('engelskx/', EngelskXView.as_view(), name='engelskx'),
+    path('engelsky/', EngelskYView.as_view(), name='engelsky'),
+    path('engelskz/', EngelskZView.as_view(), name='engelskz'),
         
 ]

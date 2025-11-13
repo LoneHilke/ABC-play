@@ -207,5 +207,67 @@ class EngelskRView(View):
             'engr': engr
         }
         return render(request, 'engelsk/engelskr.html', context)
+    
+class EngelskSView(View):
+    def get(self, request, *args, **kwargs):
+        engs = Words.objects.filter(letter__letter__contains = 'engs')
+        context = {
+            'engs': engs
+        }
+        return render(request, 'engelsk/engelsks.html', context)
+    
+class EngelskTView(View):
+    def get(self, request, *args, **kwargs):
+        engt = Words.objects.filter(letter__letter__contains = 'engt')
+        context = {
+            'engt': engt
+        }
+        return render(request, 'engelsk/engelskt.html', context)
+    
+class EngelskUView(View):
+    def get(self, request, *args, **kwargs):
+        engu = Words.objects.filter(letter__letter__contains = 'engu')
+        context = {
+            'engu': engu
+        }
+        return render(request, 'engelsk/engelsku.html', context)
 
+class EngelskVView(View):
+    def get(self, request, *args, **kwargs):
+        engv = Words.objects.filter(letter__letter__contains = 'engv')
+        context = {
+            'engv': engv
+        }
+        return render(request, 'engelsk/engelskv.html', context)
+    
+class EngelskWView(View):
+    def get(self, request, *args, **kwargs):
+        engw = Words.objects.filter(letter__letter__contains = 'engw')
+        context = {
+            'engw': engw
+        }
+        return render(request, 'engelsk/engelskw.html', context)
+    
+class EngelskXView(View):
+    def get(self, request, *args, **kwargs):
+        engx = Words.objects.filter(letter__letter__contains = 'engx')
+        context = {
+            'engx': engx
+        }
+        return render(request, 'engelsk/engelskx.html', context)
+    
+class EngelskYView(View):
+    def get(self, request, *args, **kwargs):
+        engy = Words.objects.filter(letter__letter__contains = 'engy')
+        context = {
+            'engy': engy
+        }
+        return render(request, 'engelsk/engelsky.html', context)   
 
+class EngelskZView(View):
+    def get(self, request, *args, **kwargs):
+        engz = Words.objects.filter(letter__letter__contains = 'engz')
+        context = {
+            'engz': engz
+        }
+        return render(request, 'engelsk/engelskz.html', context) 
