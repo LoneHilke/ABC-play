@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from .models import Words, Letter
+from .forms import EkstraForm
 
 # Create your views here.
 class Base(View):
@@ -271,3 +272,24 @@ class EngelskZView(View):
             'engz': engz
         }
         return render(request, 'engelsk/engelskz.html', context) 
+    
+class Tilføj(View):
+    def get(self, request, *args, **kwargs):
+        form = EkstraForm()
+        words = Words.objects.all()
+        return render(request, 'engelsk/engadd.html', {
+            'form': form,
+            'words': words,
+        })
+
+    def post(self, request, *args, **kwargs):
+        form = EkstraForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/engelsk/engadd')
+
+        words = Words.objects.all()
+        return render(request, 'dansk/tilføj.html', {
+            'form': form,
+            'words': words,
+        })

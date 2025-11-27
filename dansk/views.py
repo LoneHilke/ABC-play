@@ -82,14 +82,8 @@ class AView(View):
 class BView(View):
     def get(self, request, *args, **kwargs):
         b = Alfabet.objects.filter(bogstav__bogstav__contains='B')
-
-        form = EkstraForm()
-        if form.is_valid():
-            form.save()
-            return redirect('/dansk/tilføj')
        
         context = {
-            'form':form,
             'b': b
         }
         return render(request, 'dansk/danskb.html', context)
@@ -312,46 +306,21 @@ class ÅView(View):
     
 class Tilføj(View):
     def get(self, request, *args, **kwargs):
-        alfabet = Alfabet.objects.all()
-        bogstav = Bogstav.objects.all()
-        b = Alfabet.objects.filter(bogstav__bogstav__contains='Alfabet')
-        """a = Alfabet.objects.filter(bogstav__bogstav__contains='A')
-        
-        c = Alfabet.objects.filter(bogstav__bogstav__contains='C')
-        d = Alfabet.objects.filter(bogstav__bogstav__contains='D')
-        e = Alfabet.objects.filter(bogstav__bogstav__contains='E')
-        f = Alfabet.objects.filter(bogstav__bogstav__contains='F')
-        g = Alfabet.objects.filter(bogstav__bogstav__contains='G')
-        h = Alfabet.objects.filter(bogstav__bogstav__contains='H')
-        i = Alfabet.objects.filter(bogstav__bogstav__contains='I')
-        j = Alfabet.objects.filter(bogstav__bogstav__contains='J')
-        k = Alfabet.objects.filter(bogstav__bogstav__contains='K')
-        l = Alfabet.objects.filter(bogstav__bogstav__contains='L')
-        m = Alfabet.objects.filter(bogstav__bogstav__contains='M')
-        n = Alfabet.objects.filter(bogstav__bogstav__contains='N')
-        o = Alfabet.objects.filter(bogstav__bogstav__contains='O')
-        p = Alfabet.objects.filter(bogstav__bogstav__contains='P')
-        q = Alfabet.objects.filter(bogstav__bogstav__contains='Q')
-        r = Alfabet.objects.filter(bogstav__bogstav__contains='R')
-        s = Alfabet.objects.filter(bogstav__bogstav__contains='S')
-        t = Alfabet.objects.filter(bogstav__bogstav__contains='T')
-        u = Alfabet.objects.filter(bogstav__bogstav__contains='U')
-        v = Alfabet.objects.filter(bogstav__bogstav__contains='V')
-        w = Alfabet.objects.filter(bogstav__bogstav__contains='W')
-        x = Alfabet.objects.filter(bogstav__bogstav__contains='X')
-        y = Alfabet.objects.filter(bogstav__bogstav__contains='Y')
-        z = Alfabet.objects.filter(bogstav__bogstav__contains='Z')
-        æ = Alfabet.objects.filter(bogstav__bogstav__contains='Æ')
-        ø = Alfabet.objects.filter(bogstav__bogstav__contains='Ø')
-        å = Alfabet.objects.filter(bogstav__bogstav__contains='Å')"""
         form = EkstraForm()
+        alfabet = Alfabet.objects.all()
+        return render(request, 'dansk/tilføj.html', {
+            'form': form,
+            'alfabet': alfabet,
+        })
+
+    def post(self, request, *args, **kwargs):
+        form = EkstraForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('/dansk/tilføj')
-        context = {
+
+        alfabet = Alfabet.objects.all()
+        return render(request, 'dansk/tilføj.html', {
+            'form': form,
             'alfabet': alfabet,
-            'bogstav': bogstav,
-            'form':form,
-            'b':b,
-        }
-        return render(request, 'dansk/tilføj.html', context)
+        })

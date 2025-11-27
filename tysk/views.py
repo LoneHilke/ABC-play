@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import Alfabeth, Bugstab#, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, Æ, Ø, Å, Alfabet, Ekstra
-#from .forms import GætForm, EkstraForm
+from .forms import GætForm, EkstraForm
 import random
 
 class Base(View):
@@ -274,6 +274,27 @@ class TyskZView(View):
             'z': z
         }
         return render(request, 'tysk/tyskz.html', context)
+    
+class Tilføj(View):
+    def get(self, request, *args, **kwargs):
+        form = EkstraForm()
+        alfabeth = Alfabeth.objects.all()
+        return render(request, 'tysk/tyskplus.html', {
+            'form': form,
+            'alfabeth': alfabeth,
+        })
+
+    def post(self, request, *args, **kwargs):
+        form = EkstraForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/tysk/tyskplus')
+
+        alfabeth = Alfabeth.objects.all()
+        return render(request, 'tysk/tyskplus.html', {
+            'form': form,
+            'alfabeth': alfabeth,
+        })
 
 
 

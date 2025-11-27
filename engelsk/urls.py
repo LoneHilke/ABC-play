@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import Base, EngelskAView, EngelskBView, EngelskCView, EngelskDView, EngelskEView, EngelskFView, EngelskGView, EngelskHView, EngelskIView, EngelskJView, EngelskKView, EngelskLView, EngelskMView, EngelskNView, EngelskOView, EngelskPView, EngelskQView, EngelskRView, EngelskSView, EngelskTView, EngelskUView, EngelskVView, EngelskWView, EngelskXView, EngelskYView, EngelskZView#, GætView, Info, Tilføj
+from .views import Base, EngelskAView, EngelskBView, EngelskCView, EngelskDView, EngelskEView, EngelskFView, EngelskGView, EngelskHView, EngelskIView, EngelskJView, EngelskKView, EngelskLView, EngelskMView, EngelskNView, EngelskOView, EngelskPView, EngelskQView, EngelskRView, EngelskSView, EngelskTView, EngelskUView, EngelskVView, EngelskWView, EngelskXView, EngelskYView, EngelskZView, Tilføj
 
 urlpatterns = [
     path('', Base.as_view(), name='base'),
@@ -30,5 +30,6 @@ urlpatterns = [
     path('engelskx/', EngelskXView.as_view(), name='engelskx'),
     path('engelsky/', EngelskYView.as_view(), name='engelsky'),
     path('engelskz/', EngelskZView.as_view(), name='engelskz'),
+    path('engadd/', Tilføj.as_view(), name='engadd'),
         
 ]

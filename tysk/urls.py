@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import Base, TyskaView, TyskbView, TyskCView, TyskDView, TyskEView, TyskFView, TyskGView, TyskHView, TyskIView, TyskJView, TyskKView, TyskLView, TyskMView, TyskNView, TyskOView, TyskPView, TyskQView, TyskRView, TyskSView, TyskTView, TyskUView, TyskVView, TyskWView, TyskXView, TyskYView, TyskZView#, Info, Tilføj
+from .views import Base, TyskaView, TyskbView, TyskCView, TyskDView, TyskEView, TyskFView, TyskGView, TyskHView, TyskIView, TyskJView, TyskKView, TyskLView, TyskMView, TyskNView, TyskOView, TyskPView, TyskQView, TyskRView, TyskSView, TyskTView, TyskUView, TyskVView, TyskWView, TyskXView, TyskYView, TyskZView, Tilføj
 
 urlpatterns = [
     path('', Base.as_view(), name='base'),
@@ -30,4 +30,5 @@ urlpatterns = [
     path('tyskx/', TyskXView.as_view(), name='tyskx'),
     path('tysky/', TyskYView.as_view(), name='tysky'),
     path('tyskz/', TyskZView.as_view(), name='tyskz'),
+    path('tyskplus/', Tilføj.as_view(), name='tyskplus'),
 ]

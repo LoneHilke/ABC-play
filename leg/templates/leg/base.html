@@ -1,39 +1,22 @@
 {% extends 'forside/base.html' %}
-{% load menu_generator %}
 {% block content %}
-<!-- NAV BAR Start -->
-        {% get_menu "NAV_MENU_RIGHT" as right_menu %}
-        <div style="float:right;">
-            {% for item in right_menu %}
-                <li class="{% if item.selected %} active {% endif %}">
-                <a href="{{ item.url }}"> <i class="{{ item.icon_class }}"></i> {{ item.name }}</a>
-                </li>
-                {% if item.submenu %}
-                    <ul>
-                    {% for menu in item.submenu %}
-                        <li class="{% if menu.selected %} active {% endif %}">
-                            <a href="{{ menu.url }}">{{ menu.name }}</a>
-                        </li>
-                    {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endfor %}
-        </div>
+<div class="container text-center">
+  <div class="row align-items-center">
+    <div class="col">
+      <h2><font color = green><u><b>Dansk</b></u></font></h2>
+      <li><a  href="{% url 'stavda' %}">Stavning</a></li>
+    </div>
+    <div class="col">
+      <h2><font color = red><u><b>Tysk</b></u></font></h2>
+      <h4>Stavning</h4>
+    </div>
+    <div class="col">
+      <h2><font color = blue><u><b>Engelsk</b></u></font></h2>
+      <h4>Stavning</h4>
+    </div>
+  </div>
+</div>
 
-      
-
-        <!-- Footer Start -->
-        {% get_menu "FOOTER_MENU_LEFT" as left_footer_menu %}
-        <div style="float:left;">
-            <!-- loop through your left footer menus -->
-        </div>
-
-        {% get_menu "FOOTER_MENU_RIGHT" as right_footer_menu %}
-        <div style="float:right;">
-            <!-- loop through your right footer menus -->
-        </div>
-        <!-- Footer End -->
-<h1>Test play</h1>
 {% block letter %}
 {% endblock letter %}
 {% endblock content %}
