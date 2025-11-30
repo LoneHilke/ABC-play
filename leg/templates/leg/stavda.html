@@ -21,22 +21,22 @@
               <a class="nav-link" href="#section1">Info</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#section2">A</a>
+              <a class="nav-link" href="#section2">Hvad forestiller billedet</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#section3">B</a>
+              <a class="nav-link" href="#section3">Stavning hele alfabetet</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#section4">C</a>
+              <a class="nav-link" href="#section4">Tilbage</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#section5">D</a>
+              <a class="nav-link" href="#section5"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#section6">E</a>
+              <a class="nav-link" href="#section6"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#section7">F</a>
+              <a class="nav-link" href="#section7"></a>
             </li>
           </ul>
         </div>
@@ -55,7 +55,7 @@
       </div>
 
       <div id="section2" class="container-fluid bg-warning" style="padding:100px 20px;">
-        <h1>A</h1>
+        <h1></h1>
         <h2>Hvad forestiller dette billede?<br>Skriv ordet i boksen og tjek om det er rigtigt.</h2>
 <br>
 
@@ -106,15 +106,9 @@
     <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
       
     <div id="item-1">
-        <h4>A</h4>
+      <h4>A</h4>
+        <h4>Hvad forestiller billedet</h4>
         <img src="{{ a.image.url }}" alt="Billede" style="max-width: 300px;"><br>
-
-        <!--<form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="hidden" name="a_id" value="{{ a.id }}">
-            <button type="submit">Tjek</button>
-        </form>-->
 
         <form method="post">
         {% csrf_token %}
@@ -124,7 +118,7 @@
         <button type="submit">Tjek</button>
         </form>
 
-        {% if aktiv_model == 'a' and aktiv_id == a.id %}
+        {% if aktiv_model == 'a/alfabet' and aktiv_id == a.id %}
             <p><strong>{{ resultat }}</strong></p>
         {% endif %}
          {% if resultat %}
@@ -137,14 +131,6 @@
       <div id="item-2">
         <h4>B</h4>
         <img src="{{ b.image.url }}" alt="Billede" style="max-width: 300px;"><br>
-
-        <!--<form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="hidden" name="b_id" value="{{ b.id }}">
-    
-            <button type="submit">Tjek</button>
-        </form>-->
 
         <form method="post">
         {% csrf_token %}
@@ -168,14 +154,7 @@
         <h4>C</h4>
         <img src="{{ c.image.url }}" alt="Billede" style="max-width: 300px;"><br>
 
-        <!--<form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="hidden" name="c_id" value="{{ c.id }}">
-    
-            <button type="submit">Tjek</button>
-        </form>-->
-
+        
         <form method="post">
         {% csrf_token %}
         <label for="gæt-c">Hvad forestiller billedet?</label>
@@ -198,14 +177,7 @@
         <h4>D</h4>
         <img src="{{ d.image.url }}" alt="Billede" style="max-width: 300px;"><br>
 
-        <!--<form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="hidden" name="d_id" value="{{ d.id }}">
-    
-            <button type="submit">Tjek</button>
-        </form>-->
-
+        
         <form method="post">
         {% csrf_token %}
         <label for="gæt-d">Hvad forestiller billedet?</label>
@@ -314,34 +286,281 @@
 
         <hr>
       </div>
-      
+      <div id="item-9">
+        <h4>I</h4>
+        <img src="{{ i.image.url }}" alt="Billede" style="max-width: 300px;"><br>
+
+        <form method="post">
+        {% csrf_token %}
+        <label for="gæt-i">Hvad forestiller billedet?</label>
+        <input type="text" name="gæt" id="gæt-i">
+        <input type="hidden" name="i_id" value="{{ i.id }}">
+        <button type="submit">Tjek</button>
+        </form>
+
+        {% if resultat and aktiv_model == 'i' and aktiv_id == i.id %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+         {% if resultat %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %} 
+        
+
+        <hr>
+      </div>
+
+      <div id="item-10">
+        <h4>J</h4>
+        <img src="{{ j.image.url }}" alt="Billede" style="max-width: 300px;"><br>
+
+        <form method="post">
+        {% csrf_token %}
+        <label for="gæt-j">Hvad forestiller billedet?</label>
+        <input type="text" name="gæt" id="gæt-j">
+        <input type="hidden" name="j_id" value="{{ j.id }}">
+        <button type="submit">Tjek</button>
+        </form>
+
+        {% if resultat and aktiv_model == 'j' and aktiv_id == j.id %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+         {% if resultat %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %} 
+        
+
+        <hr>
+      </div>
+
+      <div id="item-11">
+        <h4>K</h4>
+        <img src="{{ k.image.url }}" alt="Billede" style="max-width: 300px;"><br>
+
+        <form method="post">
+        {% csrf_token %}
+        <label for="gæt-k">Hvad forestiller billedet?</label>
+        <input type="text" name="gæt" id="gæt-k">
+        <input type="hidden" name="k_id" value="{{ k.id }}">
+        <button type="submit">Tjek</button>
+        </form>
+
+        {% if resultat and aktiv_model == 'k' and aktiv_id == k.id %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+         {% if resultat %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %} 
+        
+
+        <hr>
+      </div>
+      <div id="item-12">
+        <h4>L</h4>
+        <img src="{{ l.image.url }}" alt="Billede" style="max-width: 300px;"><br>
+
+        <form method="post">
+        {% csrf_token %}
+        <label for="gæt-l">Hvad forestiller billedet?</label>
+        <input type="text" name="gæt" id="gæt-l">
+        <input type="hidden" name="l_id" value="{{ l.id }}">
+        <button type="submit">Tjek</button>
+        </form>
+
+        {% if resultat and aktiv_model == 'l' and aktiv_id == l.id %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+         {% if resultat %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %} 
+        
+
+        <hr>
+      </div>
+
+      <div id="item-13">
+        <h4>M</h4>
+        <img src="{{ m.image.url }}" alt="Billede" style="max-width: 300px;"><br>
+
+        <form method="post">
+        {% csrf_token %}
+        <label for="gæt-m">Hvad forestiller billedet?</label>
+        <input type="text" name="gæt" id="gæt-m">
+        <input type="hidden" name="m_id" value="{{ m.id }}">
+        <button type="submit">Tjek</button>
+        </form>
+
+        {% if resultat and aktiv_model == 'm' and aktiv_id == m.id %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+         {% if resultat %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %} 
+        
+
+        <hr>
+      </div>
+      <div id="item-14">
+        <h4>N</h4>
+        <img src="{{ n.image.url }}" alt="Billede" style="max-width: 300px;"><br>
+
+        <form method="post">
+        {% csrf_token %}
+        <label for="gæt-n">Hvad forestiller billedet?</label>
+        <input type="text" name="gæt" id="gæt-n">
+        <input type="hidden" name="n_id" value="{{ n.id }}">
+        <button type="submit">Tjek</button>
+        </form>
+
+        {% if resultat and aktiv_model == 'n' and aktiv_id == n.id %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+         {% if resultat %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %} 
+        
+
+        <hr>
+      </div>
+      <div id="item-15">
+        <h4>O</h4>
+        <img src="{{ o.image.url }}" alt="Billede" style="max-width: 300px;"><br>
+
+        <form method="post">
+        {% csrf_token %}
+        <label for="gæt-o">Hvad forestiller billedet?</label>
+        <input type="text" name="gæt" id="gæt-o">
+        <input type="hidden" name="o_id" value="{{ o.id }}">
+        <button type="submit">Tjek</button>
+        </form>
+
+        {% if resultat and aktiv_model == 'o' and aktiv_id == o.id %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+         {% if resultat %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %} 
+        
+
+        <hr>
+      </div>
+
+      <div id="item-16">
+        <h4>P</h4>
+        <img src="{{ p.image.url }}" alt="Billede" style="max-width: 300px;"><br>
+
+        <form method="post">
+        {% csrf_token %}
+        <label for="gæt-p">Hvad forestiller billedet?</label>
+        <input type="text" name="gæt" id="gæt-p">
+        <input type="hidden" name="p_id" value="{{ p.id }}">
+        <button type="submit">Tjek</button>
+        </form>
+
+        {% if resultat and aktiv_model == 'p' and aktiv_id == p.id %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+         {% if resultat %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %} 
+        
+        <hr>
+      </div>
+
+      <div id="item-17">
+        <h4>Q</h4>
+        <img src="{{ q.image.url }}" alt="Billede" style="max-width: 300px;"><br>
+
+        <form method="post">
+        {% csrf_token %}
+        <label for="gæt-q">Hvad forestiller billedet?</label>
+        <input type="text" name="gæt" id="gæt-q">
+        <input type="hidden" name="q_id" value="{{ q.id }}">
+        <button type="submit">Tjek</button>
+        </form>
+
+        {% if resultat and aktiv_model == 'q' and aktiv_id == q.id %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+         {% if resultat %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %} 
+        
+
+        <hr>
+      </div>
     </div>
   </div>
 </div>
       </div>
 
       <div id="section3" class="container-fluid bg-secondary text-white" style="padding:100px 20px;">
-        <h1>B</h1>
+        <h1>Stavning hele alfabetet</h1>
+
+        <div class="row">
+    <div class="col-4">
+        <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+        
+        </nav>
+
+    </div>
+
+
+  <div class="col-8">
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+      
+    <div id="item-1">
+        <h4>Hvad forestiller billedet</h4>
+        <img src="{{ alfabet.image.url }}" alt="Billede" style="max-width: 300px;"><br>
+
+        
+
+        <form method="post">
+        {% csrf_token %}
+        <label for="gæt-alfabet">Hvad forestiller billedet?</label>
+        <input type="text" name="gæt" id="gæt-alfabet">
+        <input type="hidden" name="alfabet_id" value="{{ alfabet.id }}">
+        <button type="submit">Tjek</button>
+        </form>
+
+        {% if aktiv_model == 'alfabet' and aktiv_id == alfabet.id %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+        {% if resultat %}
+            <p><strong>{{ resultat }}</strong></p>
+        {% endif %}
+        <hr>
+        </div>
+
+      
+      
+        <hr>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+      
         
       </div>
         <div id="section4" class="container-fluid bg-info text-white" style="padding:100px 20px;">
-          <h1>C</h1>
-          
+          <h1></h1>
+          <h1>Tilbage</h1>
+          <button type="button" class="btn btn-light"><a class="nav-link" href="/">Til start</a></button>
+          <hr>
+          <button type="button" class="btn btn-light"><a class="nav-link" href="#section1">Til top</a></button>
         </div>
+
         <div id="section5" class="container-fluid bg-success text-white" style="padding:100px 20px;">
-          <h1>D</h1>
+          <h1></h1>
           
                 </div>
              
         <div id="section6" class="container-fluid bg-info text-white" style="padding:100px 20px;">
-          <h1>E</h1>
+          <h1></h1>
           
         </div>
         <div id="section7" class="container-fluid bg-warning text-white" style="padding:100px 20px;">
-          <h1>F</h1>
           
-          <hr>
-          <button type="button" class="btn btn-light"><a class="nav-link" href="#section1">Til top</a></button>
         </div>
 
       </body>
